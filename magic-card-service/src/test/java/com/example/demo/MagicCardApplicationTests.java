@@ -15,7 +15,6 @@ class MagicCardApplicationTests {
 
     @Test
     void contextLoads() {
-
     }
 
 }
