@@ -1,0 +1,60 @@
+<form>
+  <mat-card>
+    <mat-card-title>Participant</mat-card-title>
+    <div class="form-group">
+      <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full Name"
+        name="participantName" [(ngModel)]="participantName">
+      <small id="nameHelp" class="form-text text-muted">First Name | Middle Name | LastName</small>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="date" class="form-control" id="exampleDOB" aria-describedby="dobHelp" placeholder="Date Of Birth"
+        name="dob" [(ngModel)]="dob">
+      <small id="dobHelp" class="form-text text-muted">Date of Birth</small>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+        placeholder="Email ID" name="emailId" [(ngModel)]="email" ngModel email>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="number" class="form-control" id="contact" aria-describedby="contactHelp" placeholder="Contact Number"
+        name="contactNo" [(ngModel)]="contactNo">
+      <small id="contactHelp" class="form-text text-muted">We'll never share your number with anyone else.</small>
+    </div>
+
+
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card-subtitle>Participant Card</mat-card-subtitle>
+    <div class="form-group">
+      <input type="text" class="form-control" id="cardName" aria-describedby="cardNameHelp" placeholder="Card Name"
+        name="cardName" [(ngModel)]="cardName">
+      <small id="cardNameHelp" class="form-text text-muted"></small>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="text" class="form-control" id="cardPrice" aria-describedby="Help" placeholder="Card Value"
+        name="cardName" [(ngModel)]="cardPrice">
+      <small id="cardPriceHelp" class="form-text text-muted"></small>
+    </div>
+    <br />
+    <mat-card-actions>
+      <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div *ngIf="message !== ''">
+  <mat-form-field appearance="fill">
+    <mat-label>Message</mat-label>
+    <input type="hidden"  matInput #errorMessage>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Action</mat-label>
+    <input  type="hidden" matInput  value="Close" #action>
+  </mat-form-field>
+</div>

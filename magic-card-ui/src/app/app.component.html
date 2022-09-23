@@ -1,0 +1,20 @@
+<main class="main">
+    <aside class="sidebar">
+        <nav class="nav">
+            <ul>
+                <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+                <li><a routerLink="/participants/list" routerLinkActive="active">Participants List</a></li>
+                <li><a routerLink="/participants/register" routerLinkActive="active">Add Participant</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <app-header></app-header>
+
+    <section>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>    
+    </section>
+    
+</main>

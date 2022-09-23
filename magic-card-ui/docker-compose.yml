@@ -1,0 +1,9 @@
+version: '3'
+services: 
+ magic-card-ui:
+  image: magic-card-ui:1.0
+  build:
+   context: ./magic-card-ui
+   dockerfile: Dockerfile
+  ports:
+   - "80:80"
