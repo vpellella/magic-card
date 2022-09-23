@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t magic-card-service -f ./Dockerfile ./magic-card-service
-      - run: docker build -t magic-card-ui -f ./Dockerfile ./magic-card-ui
+      - run: docker build -t magic-card-service -f ./magic-card-service/Dockerfile ./magic-card-service
+      - run: docker build -t magic-card-ui -f ./magic-card-ui/Dockerfile ./magic-card-ui
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
