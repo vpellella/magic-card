@@ -10,7 +10,8 @@ services:
    - "8080:8080"
   environment:
    - env.deploy =prod
-   - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/magiccard?createDatabaseIfNotExist=true
+#   - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/magiccard?createDatabaseIfNotExist=true
+   - SPRING_DATASOURCE_URL=jdbc:mysql://magiccard.c7zvcqy1ljzb.us-east-1.rds.amazonaws.com/magiccard?createDatabaseIfNotExist=true
    - SPRING_DATASOURCE_USERNAME=magiccard
    - SPRING_DATASOURCE_PASSWORD=magiccard1
   extra_hosts:
