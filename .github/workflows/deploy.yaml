@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t magic-card-service -f ./Dockerfile ./magic-card-service
-      - run: docker build -t magic-card-ui -f ./Dockerfile ./magic-card-ui
+      - run: docker build -t magic-card-service -f ./magic-card-service/Dockerfile ./magic-card-service
+      - run: docker build -t magic-card-ui -f ./magic-card-ui/Dockerfile ./magic-card-ui
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
@@ -21,8 +21,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: magic-card-service-demo
-          environment_name: Magiccardservicedemo-env
+          application_name: magic-card-demo-1
+          environment_name: Magiccarddemo1-env-1
           existing_bucket_name: elasticbeanstalk-us-east-1-423357185755
           region: us-east-1
           version_label: ${{ github.sha }}
