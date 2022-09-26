@@ -21,8 +21,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: magic-card-demo-1
-          environment_name: Magiccarddemo1-env-1
+          application_name: magic-card-demo
+          environment_name: Magiccarddemo-env
           existing_bucket_name: elasticbeanstalk-us-east-1-423357185755
           region: us-east-1
           version_label: ${{ github.sha }}
